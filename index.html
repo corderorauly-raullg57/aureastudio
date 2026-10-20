@@ -1,0 +1,502 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>AUREA Studio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="AUREA Studio convierte una idea o tus fotos en un video para redes sociales con guion, animación, voz en off y subtítulos. Prueba gratis 3 días.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* Layout: cinematic night-blue page, gold used only for the brand moments; hero = text + a live "Foto viva" phone; then a numbered pipeline, features, levels table, FAQ, contact. */
+  :root {
+    --ink: #070b14;
+    --panel: #0f1526;
+    --panel-2: #141b30;
+    --line: rgba(232, 222, 196, 0.12);
+    --text: #f4efe3;
+    --muted: #a7afc2;
+    --gold: #d7b46a;
+    --gold-2: #f1d794;
+    --ok: #63d6a0;
+    --display: "Playfair Display", Georgia, "Times New Roman", serif;
+    --body: "Montserrat", "Segoe UI", Arial, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--ink); color: var(--text); font-family: var(--body); font-size: 16px; line-height: 1.6;
+    background-image: radial-gradient(1200px 600px at 85% -10%, rgba(215,180,106,.10), transparent 60%), radial-gradient(900px 600px at -10% 40%, rgba(80,70,170,.12), transparent 60%);
+  }
+  .wrap { max-width: 1160px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  a { color: var(--gold-2); }
+  :focus-visible { outline: 2px solid var(--gold-2); outline-offset: 3px; border-radius: 6px; }
+  h1, h2, h3 { text-wrap: balance; margin: 0; }
+  h2 { font-family: var(--display); font-weight: 700; font-size: clamp(30px, 4.2vw, 46px); line-height: 1.12; letter-spacing: -0.01em; }
+  h2 em, h1 em { font-style: italic; font-weight: 600; color: var(--gold-2); }
+  h3 { font-size: 18px; font-weight: 700; }
+  p { margin: 0; }
+  .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+  .lead { color: var(--muted); font-size: 18px; max-width: 60ch; }
+  section { padding-block: clamp(56px, 8vw, 96px); }
+  .sec-head { display: grid; gap: 14px; margin-bottom: 40px; max-width: 760px; }
+
+  /* nav */
+  nav { padding-block: 18px; }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .logo { font-family: var(--display); font-weight: 700; font-size: 24px; letter-spacing: .14em; }
+  .logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; font-size: 14px; }
+  .nav-links a { color: var(--muted); text-decoration: none; }
+  .nav-links a:hover { color: var(--text); }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; font-weight: 700; font-size: 15px; border-radius: 14px; padding: 14px 22px; border: 1px solid var(--line); color: var(--text); background: rgba(255,255,255,.03); transition: transform .15s, background .15s; }
+  .btn:hover { background: rgba(255,255,255,.07); }
+  .btn.gold { border: 0; color: #191408; background: linear-gradient(135deg, var(--gold), var(--gold-2)); box-shadow: 0 12px 36px rgba(215,180,106,.25); }
+  .btn.gold:hover { transform: translateY(-1px); background: linear-gradient(135deg, var(--gold), var(--gold-2)); }
+  .btn.sm { padding: 9px 14px; font-size: 13px; border-radius: 11px; }
+
+  /* hero */
+  .hero { padding-block: clamp(28px, 5vw, 56px) clamp(56px, 8vw, 90px); }
+  .hero .wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(28px, 5vw, 64px); align-items: center; }
+  .hero h1 { font-family: var(--display); font-weight: 700; font-size: clamp(42px, 6.4vw, 76px); line-height: 1.02; letter-spacing: -0.02em; margin-top: 16px; }
+  .hero .lead { margin-top: 22px; }
+  .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+  .hero-facts { display: flex; gap: 10px 22px; flex-wrap: wrap; margin-top: 26px; font-size: 13.5px; color: var(--muted); }
+  .hero-facts b { color: var(--text); font-weight: 600; }
+  .stage { position: relative; display: grid; justify-items: center; }
+  .phone { position: relative; width: min(320px, 78vw); aspect-ratio: 9 / 16; max-width: 100%; border-radius: 34px; padding: 10px; background: linear-gradient(160deg, #262c40, #0b0f1a); box-shadow: 0 40px 90px rgba(0,0,0,.55), inset 0 0 0 1px rgba(255,255,255,.08); }
+  .phone canvas { width: 100%; height: 100%; display: block; border-radius: 26px; background: #000; }
+  .tags { position: absolute; display: grid; gap: 8px; }
+  .tags.l { left: 0; top: 18%; } .tags.r { right: 0; bottom: 20%; }
+  .tag { font-family: var(--mono); font-size: 12px; background: rgba(12,16,30,.86); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; white-space: nowrap; backdrop-filter: blur(6px); }
+  .tag i { font-style: normal; color: var(--gold); }
+
+  /* pipeline */
+  .pipe { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; background: var(--panel); }
+  .pipe li { list-style: none; padding: 22px 16px; border-right: 1px solid var(--line); display: grid; gap: 8px; align-content: start; min-width: 0; }
+  .pipe li:last-child { border-right: 0; background: linear-gradient(180deg, rgba(215,180,106,.12), transparent); }
+  .pipe .n { font-family: var(--mono); font-size: 12px; color: var(--gold); }
+  .pipe h3 { font-size: 15px; }
+  .pipe p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+  .pipe-wrap { overflow-x: auto; }
+  .pipe-wrap ol { margin: 0; padding: 0; min-width: 900px; }
+
+  /* features */
+  .feat { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 26px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+  .card .ico { font-size: 26px; line-height: 1; }
+  .card p { color: var(--muted); font-size: 14.5px; }
+  .card ul { margin: 4px 0 0; padding-left: 18px; color: var(--muted); font-size: 14px; display: grid; gap: 4px; }
+  .card.wide { grid-column: span 2; }
+  .fx-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+  .chip { font-size: 12.5px; border: 1px solid rgba(215,180,106,.35); background: rgba(215,180,106,.08); color: #efe2c0; border-radius: 999px; padding: 4px 11px; }
+
+  /* subtitles demo */
+  .subs { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin-top: 8px; }
+  .sub { position: relative; aspect-ratio: 9 / 12; max-width: 100%; border-radius: 16px; overflow: hidden; display: grid; place-items: end center; padding: 14px 10px 18px; background: linear-gradient(180deg, #3a2a4a 0%, #a2584a 55%, #1d3e5c 56%, #0b1b2c 100%); border: 1px solid var(--line); }
+  .sub small { position: absolute; top: 10px; left: 10px; font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; background: rgba(0,0,0,.5); padding: 3px 8px; border-radius: 999px; }
+  .s1 { font-weight: 600; font-size: 14px; text-align: center; border-top: 2px solid var(--gold); padding-top: 4px; text-shadow: 0 2px 8px rgba(0,0,0,.7); }
+  .s2 { font-weight: 800; font-size: 15px; text-align: center; -webkit-text-stroke: 3px #000; paint-order: stroke fill; }
+  .s2 em { font-style: normal; color: var(--gold-2); }
+  .s3 { font-weight: 800; font-size: 22px; text-transform: uppercase; -webkit-text-stroke: 4px #000; paint-order: stroke fill; line-height: 1; text-align: center; }
+  .s3 em { font-style: normal; color: var(--gold-2); }
+  .s4 { font-weight: 700; font-size: 13px; background: rgba(12,12,16,.82); padding: 6px 10px; border-radius: 6px; border-left: 3px solid var(--gold); }
+  .s5 { font-family: var(--display); font-style: italic; font-size: 15px; color: #f6ecd2; text-shadow: 0 2px 8px #000; }
+  .sub.cine::before, .sub.cine::after { content: ""; position: absolute; left: 0; right: 0; height: 12%; background: #000; }
+  .sub.cine::before { top: 0; } .sub.cine::after { bottom: 0; }
+  .sub.cine .s5 { position: relative; z-index: 1; margin-bottom: 14%; }
+  .sub.cine small { z-index: 2; }
+
+  /* levels */
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 20px; background: var(--panel); }
+  table { width: 100%; border-collapse: collapse; min-width: 720px; font-size: 14.5px; }
+  th, td { text-align: left; padding: 15px 18px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+  tr:last-child td { border-bottom: 0; }
+  td.lv { font-family: var(--mono); color: var(--gold); width: 52px; }
+  td b { font-weight: 700; }
+  td .free { color: var(--ok); font-weight: 600; }
+  tr.rec td { background: rgba(215,180,106,.06); }
+  .badge { display: inline-block; margin-left: 8px; font-size: 11px; font-weight: 700; color: #191408; background: var(--gold); border-radius: 999px; padding: 2px 8px; vertical-align: 2px; }
+  .table-note { color: var(--muted); font-size: 13.5px; margin-top: 14px; max-width: 80ch; }
+
+  /* split */
+  .split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; }
+  .uses { display: grid; gap: 10px; }
+  .use { display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start; padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel-2); }
+  .use span { font-size: 22px; }
+  .use p { font-size: 14px; color: var(--muted); }
+  .use b { color: var(--text); display: block; font-size: 15px; }
+  .req li { margin-bottom: 8px; }
+
+  /* faq */
+  .faq { display: grid; gap: 10px; max-width: 820px; }
+  details { border: 1px solid var(--line); border-radius: 14px; background: var(--panel); padding: 0 20px; }
+  summary { cursor: pointer; list-style: none; padding: 18px 0; font-weight: 700; display: flex; justify-content: space-between; gap: 16px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--gold); font-weight: 400; font-size: 22px; line-height: 1; }
+  details[open] summary::after { content: "–"; }
+  details p { padding-bottom: 18px; color: var(--muted); font-size: 15px; max-width: 70ch; }
+
+  /* contact */
+  .contact { border: 1px solid rgba(215,180,106,.35); border-radius: 28px; padding: clamp(28px, 5vw, 56px); background: radial-gradient(700px 300px at 100% 0%, rgba(215,180,106,.14), transparent 70%), var(--panel); display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 32px; align-items: center; }
+  .contact .lead { margin-top: 14px; }
+  .phonebox { display: grid; gap: 12px; padding: 22px; border-radius: 18px; background: rgba(0,0,0,.25); border: 1px solid var(--line); }
+  .phonebox .lbl { font-family: var(--mono); font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .num { font-family: var(--mono); font-size: clamp(22px, 3vw, 28px); font-weight: 500; letter-spacing: .04em; user-select: all; font-variant-numeric: tabular-nums; }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .pay { display: flex; gap: 8px; flex-wrap: wrap; }
+  .pay span { font-size: 13px; border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; color: var(--muted); }
+  #copyMsg { font-size: 13px; color: var(--ok); min-height: 1.2em; }
+
+  footer { padding-block: 34px 48px; color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--line); }
+  footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+  @media (max-width: 920px) {
+    .hero .wrap, .contact, .split { grid-template-columns: 1fr; }
+    .feat { grid-template-columns: 1fr 1fr; }
+    .card.wide { grid-column: span 2; }
+    .subs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .tags.l { left: -4px; } .tags.r { right: -4px; }
+  }
+  @media (max-width: 560px) {
+    .feat { grid-template-columns: 1fr; }
+    .card.wide { grid-column: auto; }
+    .subs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .nav-links a:not(.btn) { display: none; }
+    .tags { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+</style>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">AUREA <span>Studio</span></div>
+    <div class="nav-links">
+      <a href="#como">Cómo funciona</a>
+      <a href="#que-hace">Qué hace</a>
+      <a href="#niveles">Niveles de IA</a>
+      <a href="#preguntas">Preguntas</a>
+      <a class="btn sm gold" href="https://wa.me/5355081288?text=Hola%2C%20quiero%20probar%20AUREA%20Studio%203%20d%C3%ADas" target="_blank" rel="noopener">Probar gratis</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Creador de videos con IA · para negocios y creadores</div>
+      <h1>Tu idea, convertida en <em>video</em> que se mueve.</h1>
+      <p class="lead">Escribe lo que quieres decir o sube tus fotos. AUREA Studio escribe el guion, prepara las escenas, anima el agua, el cielo y el fuego, pone voz en off, música y subtítulos, y te entrega el video listo para WhatsApp, Reels o TikTok.</p>
+      <div class="hero-cta">
+        <a class="btn gold" href="https://wa.me/5355081288?text=Hola%2C%20quiero%20probar%20AUREA%20Studio%203%20d%C3%ADas" target="_blank" rel="noopener">Pedir prueba gratis de 3 días</a>
+        <a class="btn" href="#como">Ver cómo funciona</a>
+      </div>
+      <div class="hero-facts">
+        <span><b>Un botón</b> hace todo el video</span>
+        <span><b>Desde $0</b> en IA</span>
+        <span><b>MP4</b> 1080 × 1920</span>
+      </div>
+    </div>
+    <div class="stage" aria-label="Ejemplo animado de una escena con Foto viva">
+      <div class="phone"><canvas id="demo" width="540" height="960"></canvas></div>
+      <div class="tags l"><span class="tag"><i>●</i> 💧 agua en movimiento</span><span class="tag"><i>●</i> ☁️ nubes que avanzan</span></div>
+      <div class="tags r"><span class="tag"><i>●</i> ✨ polvo de luz</span><span class="tag"><i>●</i> subtítulos karaoke</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="como">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Cómo funciona</div>
+      <h2>Pulsas <em>Generar video</em> y la app hace estos 7 pasos sola.</h2>
+      <p class="lead">Ves el avance de cada paso. Si un servicio gratis falla, sigue con la alternativa en vez de detenerse.</p>
+    </div>
+    <div class="pipe-wrap">
+      <ol class="pipe">
+        <li><span class="n">01</span><h3>Guion</h3><p>Entiende si es anuncio, oferta, felicitación o historia y escribe un texto con hilo.</p></li>
+        <li><span class="n">02</span><h3>Imágenes</h3><p>Crea una imagen por escena, o usa tus fotos.</p></li>
+        <li><span class="n">03</span><h3>Director IA</h3><p>Mira cada imagen y marca qué animar: agua, cielo, fuego, personas.</p></li>
+        <li><span class="n">04</span><h3>Completar fotos</h3><p>Si una persona sale cortada, completa el cuerpo.</p></li>
+        <li><span class="n">05</span><h3>Animación</h3><p>Foto viva con 3D en tu PC, o clips de video IA.</p></li>
+        <li><span class="n">06</span><h3>Voz y música</h3><p>Narración en off sincronizada y música sin derechos.</p></li>
+        <li><span class="n">07</span><h3>Video final</h3><p>Se graba con subtítulos y cierre de marca, y aparece en el visor.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="que-hace">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Qué hace</div>
+      <h2>Ninguna escena queda <em>quieta</em>.</h2>
+    </div>
+    <div class="feat">
+      <article class="card wide">
+        <div class="ico">🌊</div>
+        <h3>Foto viva: anima lo que hay en la imagen</h3>
+        <p>La IA detecta cada elemento y le da su propio movimiento, con profundidad 3D: lo cercano se mueve distinto de lo lejano, como una cámara real. Funciona en tu PC, gratis y sin límite.</p>
+        <div class="fx-grid"><span class="chip">💧 agua</span><span class="chip">☁️ cielo</span><span class="chip">🔥 fuego</span><span class="chip">♨️ vapor</span><span class="chip">🍃 viento</span><span class="chip">🧍 respiración</span><span class="chip">💡 luces</span><span class="chip">💨 velocidad</span><span class="chip">☀️ rayos de sol</span><span class="chip">🔆 bokeh</span><span class="chip">🌧 lluvia</span><span class="chip">❄️ nieve</span><span class="chip">🎇 chispas</span><span class="chip">🌫 niebla</span></div>
+      </article>
+      <article class="card">
+        <div class="ico">🎬</div>
+        <h3>Video IA real, gratis</h3>
+        <p>Con una cuenta gratis de Hugging Face, cada escena se convierte en un clip donde las cosas se mueven de verdad. Unas 4 a 8 escenas por día sin pagar.</p>
+      </article>
+      <article class="card">
+        <div class="ico">🧠</div>
+        <h3>Guion con sentido</h3>
+        <p>No repite frases genéricas: usa tus datos (lugar, precios, días) y el tono que elijas. Si subes fotos, cada frase habla de lo que se ve en ella.</p>
+      </article>
+      <article class="card">
+        <div class="ico">✨</div>
+        <h3>Transforma tus fotos</h3>
+        <p>Escribe lo que quieres cambiar y la IA lo hace:</p>
+        <ul><li>completar el cuerpo de una persona</li><li>poner olas en el mar</li><li>cambiar el fondo</li></ul>
+      </article>
+      <article class="card">
+        <div class="ico">🎙</div>
+        <h3>Voz en off y música</h3>
+        <p>Voz IA, tu propia grabación con teleprompter o un audio que ya tengas. La música baja sola cuando habla la voz.</p>
+      </article>
+      <article class="card wide">
+        <div class="ico">💬</div>
+        <h3>Subtítulos animados a elegir</h3>
+        <p>Cinco estilos, con tu color de acento. También descarga el archivo .SRT para YouTube y Facebook.</p>
+        <div class="subs">
+          <div class="sub"><small>Elegante</small><span class="s1">Café recién colado</span></div>
+          <div class="sub"><small>Karaoke</small><span class="s2"><em>Los domingos</em> huele a café</span></div>
+          <div class="sub"><small>Impacto</small><span class="s3"><em>2×1</em><br>hoy</span></div>
+          <div class="sub"><small>Recuadro</small><span class="s4">Pide hoy y recíbela caliente</span></div>
+          <div class="sub cine"><small>Cine</small><span class="s5">Hecho con cariño</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ico">📁</div>
+        <h3>Proyectos que no se pierden</h3>
+        <p>Cada proyecto se guarda solo en la carpeta <span style="font-family:var(--mono)">salida</span>, junto a la app. Si se va la corriente, lo abres y sigues donde ibas.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="niveles">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Niveles de IA</div>
+      <h2>Empieza <em>gratis</em>. Sube de nivel solo si quieres.</h2>
+      <p class="lead">Las claves de los servicios son tuyas y se guardan solo en tu navegador. Los niveles de pago se cobran en la cuenta de cada servicio, no en la app.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Nivel</th><th>Qué obtienes</th><th>Costo de IA</th><th>Necesitas</th></tr></thead>
+        <tbody>
+          <tr><td class="lv">1</td><td><b>Gratis</b> · Foto viva con 3D, guion, imágenes y voz IA</td><td class="free">$0</td><td>Nada</td></tr>
+          <tr class="rec"><td class="lv">2</td><td><b>Gratis con cuentas</b> <span class="badge">recomendado</span><br>Además, video IA real en las escenas</td><td class="free">$0</td><td>Cuenta gratis de Hugging Face</td></tr>
+          <tr><td class="lv">3</td><td><b>Créditos diarios</b> · guion y voz más naturales con Gemini</td><td class="free">$0 dentro de la cuota</td><td>Gemini + Hugging Face (gratis)</td></tr>
+          <tr><td class="lv">4</td><td><b>Pago económico</b> · imágenes FLUX rápidas y nítidas</td><td>Centavos por video</td><td>fal.ai</td></tr>
+          <tr><td class="lv">5</td><td><b>Pago calidad</b> · imágenes, guion y voz de OpenAI</td><td>Centavos por imagen</td><td>OpenAI</td></tr>
+          <tr><td class="lv">6</td><td><b>Video IA de pago</b> · Kling 2.5 Turbo, sin límite diario</td><td>≈ $0.35 por escena</td><td>fal.ai</td></tr>
+          <tr><td class="lv">7</td><td><b>Premium</b> · Kling 3.0 Pro + OpenAI</td><td>≈ $0.56 por escena</td><td>OpenAI + fal.ai</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">Los servicios gratis tienen límites diarios y a veces están ocupados; cuando eso pasa, la app sigue con Foto viva. Los costos de pago son aproximados y los fija cada proveedor.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div class="card">
+      <div class="eyebrow">Para quién es</div>
+      <h3 style="font-family:var(--display);font-size:26px;margin-top:6px">Videos que antes pagabas a un editor</h3>
+      <div class="uses" style="margin-top:12px">
+        <div class="use"><span>🏪</span><p><b>Negocios locales</b>Cafeterías, pizzerías, barberías, tiendas: ofertas y horarios en video.</p></div>
+        <div class="use"><span>📱</span><p><b>Vendedores en grupos</b>Un video nuevo para cada producto, listo para Estados y grupos de WhatsApp.</p></div>
+        <div class="use"><span>🎉</span><p><b>Felicitaciones y eventos</b>Cumpleaños, aniversarios e invitaciones con voz y música.</p></div>
+        <div class="use"><span>🎥</span><p><b>Creadores de contenido</b>Reels y TikToks con subtítulos estilo karaoke sin editar a mano.</p></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="eyebrow">Qué necesitas</div>
+      <h3 style="font-family:var(--display);font-size:26px;margin-top:6px">Una PC y un navegador</h3>
+      <ul class="req" style="margin-top:12px;font-size:15px">
+        <li>PC o laptop con <b style="color:var(--text)">Google Chrome</b> o <b style="color:var(--text)">Microsoft Edge</b>.</li>
+        <li>Internet para el guion, las imágenes, la voz y el video IA.</li>
+        <li>Sin conexión funcionan la Foto viva, la música, los subtítulos y la grabación del video.</li>
+        <li>No hay que instalar nada: es un solo archivo que abres con doble clic.</li>
+        <li>Incluye un tutorial paso a paso con recetas listas.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="preguntas">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Preguntas frecuentes</div>
+      <h2>Lo que más nos preguntan</h2>
+    </div>
+    <div class="faq">
+      <details><summary>¿De verdad puedo hacer videos sin pagar la IA?</summary><p>Sí. Los niveles 1, 2 y 3 usan servicios gratuitos. Tienen límites diarios: con una cuenta gratis de Hugging Face salen unas 4 a 8 escenas con video IA real por día, y la Foto viva no tiene límite.</p></details>
+      <details><summary>¿Cuánto tarda un video?</summary><p>El guion y las imágenes tardan de 1 a 3 minutos con los servicios gratis. El video se graba en tiempo real: uno de 20 segundos tarda unos 20 segundos. Cada clip de video IA tarda de 1 a 5 minutos.</p></details>
+      <details><summary>¿Funciona en el celular?</summary><p>Se abre, pero está hecha para PC: en el celular no guarda proyectos en carpetas y la grabación es más lenta.</p></details>
+      <details><summary>¿Puedo usar los videos en mi negocio?</summary><p>Sí. La música incluida la genera la propia app y no tiene derechos de autor. Si subes música propia, debe ser tuya o libre de derechos.</p></details>
+      <details><summary>¿Qué pasa si se va la corriente a mitad del trabajo?</summary><p>El proyecto se guarda solo cada vez que cambias algo. Al volver, pulsas Abrir y sigues donde ibas, con las imágenes, clips y voces ya hechos.</p></details>
+      <details><summary>¿Cómo funciona la prueba gratis?</summary><p>Escríbeme por WhatsApp y te envío la app con 3 días de prueba completa. Si te gusta, compras la licencia y te la activo.</p></details>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <div class="eyebrow">Prueba gratis de 3 días</div>
+        <h2 style="margin-top:12px">Haz tu primer video <em>hoy</em>.</h2>
+        <p class="lead">Escríbeme por WhatsApp, te envío AUREA Studio con el tutorial y te ayudo a crear tu primer video. Consulta el precio de la licencia en el mismo chat.</p>
+        <div class="pay" style="margin-top:20px"><span>QvaPay</span><span>Transfermóvil (CUP)</span><span>Licencia con activación</span></div>
+      </div>
+      <div class="phonebox">
+        <span class="lbl">WhatsApp</span>
+        <span class="num" id="num">+53 5508 1288</span>
+        <div class="row">
+          <a class="btn gold" href="https://wa.me/5355081288?text=Hola%2C%20quiero%20probar%20AUREA%20Studio%203%20d%C3%ADas" target="_blank" rel="noopener">Abrir WhatsApp</a>
+          <button class="btn" id="copyBtn" type="button">Copiar número</button>
+        </div>
+        <span id="copyMsg" aria-live="polite"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>AUREA Studio · parte del catálogo <b style="color:var(--text)">Herramix</b></span>
+    <span>Hecho en Holguín, Cuba</span>
+  </div>
+</footer>
+
+<script>
+(() => {
+  /* ---------- copiar número ---------- */
+  const btn = document.getElementById("copyBtn"), msg = document.getElementById("copyMsg"), num = document.getElementById("num");
+  btn.addEventListener("click", () => {
+    const text = "+5355081288";
+    const done = () => { msg.textContent = "Número copiado."; setTimeout(() => (msg.textContent = ""), 2500); };
+    const fallback = () => { const r = document.createRange(); r.selectNodeContents(num); const s = getSelection(); s.removeAllRanges(); s.addRange(r); msg.textContent = "Número seleccionado: cópialo con Ctrl+C."; };
+    try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
+  });
+
+  /* ---------- demo "Foto viva" ---------- */
+  const cv = document.getElementById("demo"), g = cv.getContext("2d");
+  const W = cv.width, H = cv.height, HZ = H * 0.56;
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const h1 = (i) => { const x = Math.sin(i * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); };
+  const lines = [
+    [["Los", 0], ["domingos", 1], ["huele", 2], ["a", 3], ["café", 4]],
+    [["recién", 0], ["colado", 1], ["frente", 2], ["al", 3], ["mar.", 4]],
+    [["Te", 0], ["esperamos", 1], ["en", 2], ["AUREA.", 3]]
+  ];
+  const clouds = Array.from({ length: 7 }, (_, i) => ({ x: h1(i) * W, y: 60 + h1(i + 9) * 260, r: 50 + h1(i + 3) * 70, s: 4 + h1(i + 5) * 8 }));
+  function frame(t) {
+    // cielo
+    const sky = g.createLinearGradient(0, 0, 0, HZ);
+    sky.addColorStop(0, "#2b2150"); sky.addColorStop(0.45, "#a4507a"); sky.addColorStop(0.85, "#f39a5c"); sky.addColorStop(1, "#ffd28a");
+    g.fillStyle = sky; g.fillRect(0, 0, W, HZ);
+    // sol
+    const sx = W * 0.5, sy = HZ - 40;
+    const sg = g.createRadialGradient(sx, sy, 10, sx, sy, 220);
+    sg.addColorStop(0, "rgba(255,240,200,1)"); sg.addColorStop(0.18, "rgba(255,214,140,.95)"); sg.addColorStop(1, "rgba(255,170,90,0)");
+    g.fillStyle = sg; g.fillRect(0, 0, W, HZ);
+    // nubes que avanzan
+    clouds.forEach((c) => {
+      const x = ((c.x + t * c.s) % (W + 300)) - 150;
+      g.fillStyle = "rgba(255,200,190,.16)";
+      for (let k = 0; k < 4; k++) { g.beginPath(); g.ellipse(x + k * c.r * 0.55, c.y + Math.sin(k) * 8, c.r, c.r * 0.32, 0, 0, 7); g.fill(); }
+    });
+    // mar
+    const sea = g.createLinearGradient(0, HZ, 0, H);
+    sea.addColorStop(0, "#c46a5a"); sea.addColorStop(0.08, "#2c4f78"); sea.addColorStop(1, "#08182b");
+    g.fillStyle = sea; g.fillRect(0, HZ, W, H - HZ);
+    // reflejo del sol y olas brillantes
+    for (let i = 0; i < 120; i++) {
+      const y = HZ + 4 + Math.pow(h1(i + 40), 1.6) * (H - HZ);
+      const depth = (y - HZ) / (H - HZ);
+      const near = 0.4 + depth * 1.6;
+      const wob = Math.sin(t * (1.2 + h1(i) * 1.5) + i) * 18 * near;
+      const center = sx + (h1(i + 2) - 0.5) * (60 + depth * 380);
+      const w = (14 + h1(i + 7) * 46) * near;
+      const al = (0.25 + 0.6 * Math.max(0, Math.sin(t * 2 + i * 1.7))) * (1 - Math.min(1, Math.abs(center - sx) / (120 + depth * 260)));
+      g.fillStyle = `rgba(255,${200 + Math.floor(40 * depth)},150,${al.toFixed(3)})`;
+      g.fillRect(center + wob - w / 2, y, w, 2 + depth * 3);
+    }
+    for (let i = 0; i < 60; i++) {
+      const y = HZ + 10 + h1(i + 90) * (H - HZ - 10), depth = (y - HZ) / (H - HZ);
+      const x = ((h1(i + 70) * W + t * (6 + depth * 20)) % (W + 80)) - 40;
+      g.fillStyle = `rgba(160,200,255,${(0.08 + 0.12 * depth).toFixed(3)})`;
+      g.fillRect(x, y + Math.sin(t * 1.5 + i) * 3, 30 + depth * 80, 1.5 + depth * 2);
+    }
+    // silueta de café y taza en primer plano (con vapor)
+    g.fillStyle = "#120d14";
+    g.beginPath(); g.moveTo(0, H * 0.83); g.lineTo(W, H * 0.8); g.lineTo(W, H); g.lineTo(0, H); g.fill();
+    const cx = W * 0.72, cy = H * 0.79;
+    g.fillStyle = "#1b1219"; g.beginPath(); g.ellipse(cx, cy + 34, 72, 14, 0, 0, 7); g.fill();
+    g.fillStyle = "#24171f"; g.fillRect(cx - 44, cy - 30, 88, 62); g.beginPath(); g.ellipse(cx, cy + 32, 44, 10, 0, 0, 7); g.fill();
+    g.strokeStyle = "#24171f"; g.lineWidth = 10; g.beginPath(); g.arc(cx + 50, cy, 18, -1.2, 1.2); g.stroke();
+    g.fillStyle = "#3b2418"; g.beginPath(); g.ellipse(cx, cy - 30, 44, 9, 0, 0, 7); g.fill();
+    g.lineWidth = 5; g.lineCap = "round";
+    for (let k = 0; k < 3; k++) {
+      const ph = (t * 0.45 + k / 3) % 1;
+      g.strokeStyle = `rgba(255,236,220,${(0.35 * (1 - ph)).toFixed(3)})`;
+      g.beginPath();
+      for (let y = 0; y <= 120; y += 8) { const yy = cy - 44 - y - ph * 30; const xx = cx - 14 + k * 14 + Math.sin(y * 0.06 + t * 2 + k) * 10; y ? g.lineTo(xx, yy) : g.moveTo(xx, yy); }
+      g.stroke();
+    }
+    // polvo de luz
+    g.save(); g.globalCompositeOperation = "lighter";
+    for (let i = 0; i < 40; i++) {
+      const sp = 0.3 + h1(i) * 0.7;
+      const x = (h1(i + 1) * W + Math.sin(t * 0.5 * sp + i) * 20 + t * 6 * sp) % W;
+      const y = ((h1(i + 2) * H - t * 12 * sp) % H + H) % H;
+      g.fillStyle = `rgba(255,236,200,${(0.15 + 0.35 * Math.abs(Math.sin(t * sp + i))).toFixed(3)})`;
+      g.beginPath(); g.arc(x, y, 1.2 + h1(i + 3) * 2.4, 0, 7); g.fill();
+    }
+    g.restore();
+    // viñeta
+    const vg = g.createRadialGradient(W / 2, H / 2, W * 0.35, W / 2, H / 2, H * 0.62);
+    vg.addColorStop(0, "rgba(0,0,0,0)"); vg.addColorStop(1, "rgba(0,0,0,.5)");
+    g.fillStyle = vg; g.fillRect(0, 0, W, H);
+    // marca
+    g.font = "700 18px Montserrat, Arial, sans-serif"; g.textAlign = "right"; g.textBaseline = "top"; g.fillStyle = "rgba(255,255,255,.9)";
+    g.fillText("A U R E A", W - 28, 30);
+    // subtítulo karaoke
+    const cyc = 3.2, li = Math.floor(t / cyc) % lines.length, lt = (t % cyc) / cyc;
+    const words = lines[li], n = words.length;
+    g.font = "800 34px Montserrat, Arial, sans-serif"; g.textBaseline = "middle"; g.textAlign = "left";
+    const space = g.measureText(" ").width;
+    const widths = words.map((w) => g.measureText(w[0]).width);
+    const total = widths.reduce((a, b) => a + b, 0) + space * (n - 1);
+    let x = W / 2 - total / 2; const y = H * 0.68;
+    const alpha = Math.min(1, lt * 8, (1 - lt) * 10);
+    g.globalAlpha = Math.max(0, alpha);
+    g.lineJoin = "round";
+    words.forEach((w, k) => {
+      const on = lt * (n + 0.6) > k + 0.3;
+      g.lineWidth = 7; g.strokeStyle = "rgba(0,0,0,.85)"; g.strokeText(w[0], x, y);
+      g.fillStyle = on ? "#f1d794" : "#ffffff"; g.fillText(w[0], x, y);
+      x += widths[k] + space;
+    });
+    g.globalAlpha = 1;
+  }
+  if (reduce) { frame(2.1); return; }
+  let start = null;
+  const loop = (ts) => { if (start == null) start = ts; frame((ts - start) / 1000); requestAnimationFrame(loop); };
+  requestAnimationFrame(loop);
+})();
+</script>
+
+</body></html>
