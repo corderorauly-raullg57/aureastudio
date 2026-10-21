@@ -98,17 +98,24 @@ Pulsa **⚙ Configuración**. Los niveles van de gratis a premium:
 
 > 🔒 Las claves se guardan solo en tu navegador. No van dentro de los proyectos, así que puedes compartir una carpeta de proyecto sin riesgo.
 
-### 🔁 Respaldo automático y orden de prioridad
+### 🤖 Modo automático: el video nunca se detiene
 
-Tener varias claves sirve de seguro: si un servicio no responde o **está bloqueado para tu país** (aunque uses VPN), la app pasa sola al siguiente disponible y te lo indica arriba, en la barra **Motor de IA** (🔁).
+Cada computadora (la tuya o la de un cliente) tiene servicios que funcionan y otros que no, según el país, la VPN o el saldo. El **modo automático** (activado de fábrica) se encarga solo:
 
-1. Pon todas las claves que tengas.
-2. Pulsa **🔌 Probar conexiones**: la app prueba cada servicio desde tu conexión y marca ✓ funciona, ✕ bloqueado o ○ sin clave.
-3. Pulsa **⚡ Usar el mejor disponible**: en cada paso (guion, imágenes, voz, video IA, transformar) elige el primero de la lista que funciona.
-4. Para cambiar el orden de preferencia, toca un servicio en la lista y sube (↑).
+1. **Comprueba los servicios** al abrir la app (cada 6 horas como máximo) y otra vez antes de cada video (si pasaron más de 20 minutos). En el progreso verás el paso **Comprobar servicios** con lo que se va a usar.
+2. **Sigue el orden de prioridad** de cada paso (guion, imágenes, voz, video IA y transformar): empieza por el que elegiste y, si no está disponible, pasa al siguiente de la lista.
+3. **Si uno falla durante el trabajo**, prueba el siguiente al instante, sin parar, y lo avisa con 🔁 en la barra **Motor de IA**.
+4. **Recuerda lo que falló** en esa computadora: si un servicio está bloqueado para el país o la clave no vale, lo salta durante unas horas; si solo falló por saturación, lo vuelve a intentar a los 15 minutos.
+5. **Si todo falla**, termina el video igual: guion de respaldo, fondo artístico en lugar de la imagen, voz local en tu PC y Foto viva en lugar del video IA.
 
-- **Si un servicio no responde, usar el siguiente disponible**: déjalo activado.
-- **Permitir que el respaldo pase a servicios de pago**: desactivado, el respaldo solo usa servicios gratis, así nunca gastas sin querer.
+Dónde se ajusta, en **⚙ Configuración › Respaldo automático y orden de prioridad**:
+- **🤖 Modo automático (recomendado)**: déjalo activado.
+- **Permitir que el respaldo pase a servicios de pago**: desactivado, el respaldo solo usa servicios gratis, así nunca se gasta dinero sin querer. El servicio de pago que tú elijas sí se usa.
+- **El orden de cada paso**: toca un servicio y sube (↑). Al elegir un nivel, sus servicios pasan a ser los primeros de la lista.
+- **Cómo se marca cada servicio**: ✓ funciona, ✕ falló (con el motivo), ○ sin clave y $ si es de pago. Arriba de cada lista se ve cuál se está usando ahora, y si tu elección no está disponible.
+- **🔌 Probar conexiones** y **⚡ Usar el mejor disponible** siguen ahí por si quieres comprobarlo a mano.
+
+> **Para vender la app:** cada cliente pone sus claves y el modo automático se adapta solo a su país y a su conexión, sin que tengas que configurarle nada.
 
 **¿Y Google Flow?** Flow no tiene conexión para otras apps y bloquea Cuba aunque uses VPN. Pero su potencia viene de los modelos de video de Google, **Veo** y **Omni Flash**, y esos sí los puedes usar en AUREA a través de servicios que no son de Google:
 
