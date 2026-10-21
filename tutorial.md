@@ -11,17 +11,18 @@
 3. [Crear un proyecto](#3-crear-un-proyecto)
 4. [Elegir el nivel de IA](#4-elegir-el-nivel-de-ia)
 5. [Paso 1 · Idea y guion](#5-paso-1--idea-y-guion)
-6. [Paso 2 · Escenas](#6-paso-2--escenas)
-7. [Paso 3 · Formato y animación](#7-paso-3--formato-y-animación)
-8. [Paso 4 · Audio y narración](#8-paso-4--audio-y-narración)
-9. [Paso 5 · Subtítulos](#9-paso-5--subtítulos)
-10. [Paso 6 · Marca y cierre](#10-paso-6--marca-y-cierre)
-11. [Paso 7 · Generar video](#11-paso-7--generar-video)
-12. [Dónde quedan tus archivos](#12-dónde-quedan-tus-archivos)
-13. [Recetas rápidas](#13-recetas-rápidas)
-14. [Consejos si tienes poca electricidad o poca conexión](#14-consejos-si-tienes-poca-electricidad-o-poca-conexión)
-15. [Solución de problemas](#15-solución-de-problemas)
-16. [Preguntas frecuentes](#16-preguntas-frecuentes)
+6. [Paso 2 · Reparto](#6-paso-2--reparto)
+7. [Paso 3 · Escenas](#7-paso-3--escenas)
+8. [Paso 4 · Formato y animación](#8-paso-4--formato-y-animación)
+9. [Paso 5 · Audio y narración](#9-paso-5--audio-y-narración)
+10. [Paso 6 · Subtítulos](#10-paso-6--subtítulos)
+11. [Paso 7 · Marca y cierre](#11-paso-7--marca-y-cierre)
+12. [Paso 8 · Generar video y exportar paquete](#12-paso-8--generar-video-y-exportar-paquete)
+13. [Dónde quedan tus archivos](#13-dónde-quedan-tus-archivos)
+14. [Recetas rápidas](#14-recetas-rápidas)
+15. [Consejos si tienes poca electricidad o poca conexión](#15-consejos-si-tienes-poca-electricidad-o-poca-conexión)
+16. [Solución de problemas](#16-solución-de-problemas)
+17. [Preguntas frecuentes](#17-preguntas-frecuentes)
 
 ---
 
@@ -70,8 +71,8 @@ Pulsa **⚙ Configuración**. Los niveles van de gratis a premium:
 
 | Nivel | Qué hace | Costo | Claves que necesitas |
 |---|---|---|---|
-| **1 · Gratis** (predeterminado) | Foto viva en tu PC (agua, cielo, fuego y vehículos en movimiento, profundidad 3D). Guion, imágenes y voz con Pollinations. | $0 | Ninguna |
-| **2 · Gratis con cuentas** | Además convierte escenas en **video IA real** (Wan 2.2), unas 4 a 8 escenas por día. | $0 | Hugging Face (gratis) |
+| **1 · Gratis** (predeterminado) | Foto viva en tu PC (agua, cielo, fuego y vehículos en movimiento, profundidad 3D). **Voz local** generada en tu PC. Guion e imágenes con Pollinations sin cuenta (lento: 1 respuesta cada 30 s). | $0 | Ninguna |
+| **2 · Gratis con cuentas** | Además: **video IA real** (Wan 2.2, unas 4 a 8 escenas por día), sin esperas, y un director que **ve** tus fotos y las capturas de webs. | $0 | Hugging Face + Pollinations (gratis) |
 | **3 · Créditos diarios** | Guion y voz más naturales con Google Gemini, más el video IA de Hugging Face. | $0 dentro de la cuota | Gemini + Hugging Face (gratis) |
 | **4 · Pago económico** | Imágenes FLUX rápidas y nítidas en fal.ai. | Centavos por video | fal.ai + Gemini |
 | **5 · Pago calidad** | Imágenes, guion y voz de OpenAI. | Centavos por imagen | OpenAI |
@@ -79,6 +80,8 @@ Pulsa **⚙ Configuración**. Los niveles van de gratis a premium:
 | **7 · Premium** | Kling 3.0 Pro + OpenAI, la máxima calidad. | ≈ $0.56 por escena + imágenes | OpenAI + fal.ai |
 
 **Recomendación para empezar:** el nivel **2**, que es gratis y ya da video IA real.
+
+> **Por qué conviene la clave gratuita de Pollinations:** sin clave, Pollinations solo responde 1 vez cada 30 segundos, no tiene voz y su IA no puede ver imágenes. Con la clave gratuita (botón **Obtener clave** junto a Pollinations) desaparecen las tres limitaciones.
 
 ### Cómo sacar la clave gratis de Hugging Face
 
@@ -95,6 +98,28 @@ Pulsa **⚙ Configuración**. Los niveles van de gratis a premium:
 
 > 🔒 Las claves se guardan solo en tu navegador. No van dentro de los proyectos, así que puedes compartir una carpeta de proyecto sin riesgo.
 
+### 🔁 Respaldo automático y orden de prioridad
+
+Tener varias claves sirve de seguro: si un servicio no responde o **está bloqueado para tu país** (aunque uses VPN), la app pasa sola al siguiente disponible y te lo indica arriba, en la barra **Motor de IA** (🔁).
+
+1. Pon todas las claves que tengas.
+2. Pulsa **🔌 Probar conexiones**: la app prueba cada servicio desde tu conexión y marca ✓ funciona, ✕ bloqueado o ○ sin clave.
+3. Pulsa **⚡ Usar el mejor disponible**: en cada paso (guion, imágenes, voz, video IA, transformar) elige el primero de la lista que funciona.
+4. Para cambiar el orden de preferencia, toca un servicio en la lista y sube (↑).
+
+- **Si un servicio no responde, usar el siguiente disponible**: déjalo activado.
+- **Permitir que el respaldo pase a servicios de pago**: desactivado, el respaldo solo usa servicios gratis, así nunca gastas sin querer.
+
+**¿Y Google Flow?** Flow no tiene conexión para otras apps y bloquea Cuba aunque uses VPN. Pero su potencia viene de los modelos de video de Google, **Veo** y **Omni Flash**, y esos sí los puedes usar en AUREA a través de servicios que no son de Google:
+
+| En AUREA | Modelo | Servicio | Costo aprox. |
+|---|---|---|---|
+| Google Veo 3.1 · fal.ai | Veo 3.1 (el de Flow) | fal.ai | ≈ $1,20 por escena |
+| Google Omni Flash · fal.ai | Omni Flash (el que usa Camino Digital) | fal.ai | ≈ $0,60 por escena |
+| Veo 3.1 Fast · Pollinations | Veo 3.1 Fast | Pollinations (pollen de pago) | según pollen |
+
+Elígelos en **Ajuste fino › Animación de escenas**.
+
 ### Ajuste fino y modelos (avanzado)
 
 - **Ajuste fino por servicio:** mezcla proveedores, por ejemplo la voz de ElevenLabs con imágenes gratis.
@@ -108,14 +133,39 @@ Elige cómo empezar.
 
 ### Opción A — Desde una idea
 
-1. Pulsa **✨ Desde una idea**.
+1. Pulsa **✨ Desde una idea** y elige cómo nace el guion:
+   - **🤖 La IA escribe el guion**, o
+   - **✍️ Pegar mi guion**: pega tu texto, una línea o párrafo por escena. La IA **no cambia tus frases**; solo prepara el reparto, las imágenes y la animación.
 2. En **¿Qué quieres expresar?** escribe con detalles concretos: qué es, dónde, para quién, qué lo hace especial, precios, días.
    - ❌ Poco útil: `cafetería`
    - ✅ Útil: `Mi cafetería en Holguín abre los domingos con desayunos caseros, café cubano recién colado y precios para toda la familia.`
-3. Elige el **tono** (persuasivo, emotivo, inspirador, divertido, elegante, informativo u oferta urgente) y el **número de escenas** (de 3 a 6).
-4. Pulsa **✨ Crear guion e imágenes**, o salta directo al paso 7.
+3. *(Opcional)* Pulsa **💡 Sugerir 5 enfoques**: la IA propone 5 maneras distintas de contarlo (oferta, humor, testimonio, historia emotiva, dato sorprendente…), cada una con su frase de gancho. Toca la que te guste.
+4. Elige el **tono**, el **número de escenas** (3 a 8) y el **idioma** del video (español, inglés o portugués). El idioma se aplica al guion, la voz y los subtítulos.
+5. Pulsa **✨ Escribir guion**. Aparece la **Versión A** con el guion completo y el reparto detectado.
+6. ¿No te convence? Pulsa **↻ Otra versión** y verás la **Versión B al lado** para comparar. Toca **Elegir esta** en la que prefieras.
+7. Pulsa **✓ Usar la elegida y crear escenas**: se crean el reparto y las imágenes de cada escena.
+
+> También puedes saltar directo al paso 8: **🎬 Generar video** hace todo esto solo, con la primera versión.
 
 El director creativo entiende si es un anuncio, una felicitación, una historia o un aviso, y escribe un guion con hilo de principio a fin. En los negocios, la última escena menciona tu marca y la llamada a la acción.
+
+### Opción C — Desde una web (link)
+
+Ideal para clientes que ya tienen web: la app la convierte en un **video explicativo**, al estilo de los resúmenes en video de NotebookLM.
+
+1. Pulsa **🌐 Desde una web** y pega la dirección (por ejemplo `www.tucliente.com`).
+2. Elige el **objetivo** (promocionar el negocio, explicar qué ofrece, guía paso a paso o resumen de un artículo) y **qué mostrar** (la web navegando más sus fotos, solo la web, o fotos y escenas IA).
+3. Elige tono, idioma y número de escenas, y pulsa **🌐 Analizar la web y crear escenas** (o directamente 🎬 Generar video).
+
+Qué hace la app:
+- **Lee** todo el texto de la web y toma una **captura completa** de la página (versión móvil para videos verticales, de escritorio para horizontales).
+- **Divide** la web en partes: presentación, servicios, precios, cómo funciona, contacto…
+- En cada escena **muestra esa parte de la web dentro de un navegador** que se desplaza solo, **señala** lo importante (un precio, un botón) con un marco brillante y un cursor que hace clic, y pone **un título y hasta 3 puntos clave** en pantalla.
+- Alterna con las **fotos de la propia web** (animadas con Foto viva) y con imágenes IA cuando falta algo.
+- Narra con voz y subtítulos, como cualquier otro video.
+
+> Para que la IA vea la captura y señale el sitio exacto hace falta la clave gratuita de Pollinations (o Gemini/OpenAI). Sin ella, divide la web solo por su texto y no señala zonas.
+> En **⚙ Ficha** de cada escena puedes cambiar el **título en pantalla** y los **puntos clave**. En Subtítulos puedes ocultarlos.
 
 ### Opción B — Desde mis imágenes
 
@@ -126,7 +176,20 @@ El director creativo entiende si es un anuncio, una felicitación, una historia 
 
 ---
 
-## 6. Paso 2 · Escenas
+## 6. Paso 2 · Reparto
+
+El **reparto** son los personajes, lugares y productos que aparecen en el guion. Sirve para que **la misma persona y el mismo producto se vean iguales en todas las escenas**, que es lo que más se nota en un video profesional.
+
+- Se llena solo al escribir el guion. Cada ficha tiene imagen, nombre, tipo (🧍 personaje, 🏠 lugar, 📦 producto, 🔹 objeto) y una descripción de cómo es.
+- **Subir foto**: pon la **foto real** de tu producto, de tu local o de una persona. Es lo más recomendado para negocios: el video mostrará lo verdadero, no algo inventado.
+- **↻ Generar**: crea la imagen con IA a partir de la descripción (puedes escribirla en español).
+- **🎨 Adaptar**: redibuja la foto en el estilo visual elegido (por ejemplo, tu foto en versión anime o acuarela), conservando los rasgos. **↺** vuelve a la original.
+- **✨ Generar faltantes**: crea todas las imágenes que falten. **+ Añadir**: agrega a mano un personaje o producto.
+- Deja marcado **Usar estas imágenes como referencia en cada escena**: cada escena se genera a partir de las fotos del reparto que tiene vinculadas.
+
+> La referencia funciona mejor con los niveles de pago (Gemini u OpenAI aceptan varias fotos a la vez). En los niveles gratis se usa la transformación de Hugging Face; si falla, la escena se genera solo con la descripción y te lo indica.
+
+## 7. Paso 3 · Escenas
 
 Cada escena muestra su imagen, su texto y unos **chips** con lo que se va a animar:
 
@@ -154,13 +217,22 @@ Botones de cada escena:
   - `cambia el fondo por una playa al atardecer`
   - Pulsa **✨ Aplicar**. Si no te gusta, **↺ Volver al original**.
 - **🎬 Video IA** — convierte esa escena en un clip de video real (niveles 2 en adelante).
+- **📥 Clip** — pon un clip de video **hecho en otra app** (por ejemplo, con los prompts del paquete en Meta Vibes). AUREA lo une con voz, música y subtítulos.
+- **⚙ Ficha** — abre la ficha técnica de la escena:
+  - **Plano**: general, medio, primer plano, detalle, cenital o contrapicado.
+  - **Cámara**: acercar, alejar, paneo, subir u órbita.
+  - **Luz**: natural, hora dorada, estudio, nocturna, dramática o neón.
+  - **Prompt de imagen** y **prompt de animación**, editables: escribe exactamente qué debe moverse antes de mandarlo al video IA.
+  - **Escena compleja**: márcala si tiene personas actuando o acción; esas son las que conviene animar con video IA.
+- **🔗 Reparto vinculado** — los chips azules muestran quién aparece en la escena. Toca uno para quitarlo o usa **+ vincular** para añadir.
+- El número de la escena lleva **⚡** cuando es compleja.
 - **↑ ↓** — cambia el orden. **✕** — elimina la escena.
 
 > 💡 Si ves el mensaje **"El director sugiere…"**, la IA detectó algo que mejorar, como una persona cortada. Pulsa **✨ Transformar** para aplicarlo.
 
 ---
 
-## 7. Paso 3 · Formato y animación
+## 8. Paso 4 · Formato y animación
 
 **Formato:**
 
@@ -178,20 +250,20 @@ Botones de cada escena:
 - **Profundidad 3D** — lo cercano y lo lejano se mueven distinto, como una cámara real. La primera vez descarga 25 MB.
 - **Partículas y luces** — ambiente según la escena.
 - **Completar mis fotos con IA** — aplica sola las mejoras que sugiere el director.
-- **Video IA** — en todas las escenas, solo en la primera (para ahorrar cuota), o en ninguna.
+- **Video IA** — **solo en escenas complejas** (recomendado: gasta la cuota donde más se nota y deja paisajes, productos y ambientes a la Foto viva), en todas, solo en la primera, o en ninguna.
 - **Cámara** — suave, media o intensa.
 - **Transición** — fundido, zoom, deslizar, destello o corte.
 
 ---
 
-## 8. Paso 4 · Audio y narración
+## 9. Paso 5 · Audio y narración
 
 | Modo | Cómo funciona |
 |---|---|
 | **Sin voz** | Solo música y subtítulos. |
 | **🎙 Grabar** | Lee el guion en pantalla (teleprompter) y graba con el micrófono. Los silencios del inicio y del final se recortan solos. |
 | **📁 Archivo** | Sube una locución que ya tengas (MP3, WAV, M4A, OGG). |
-| **🤖 Voz IA** | Elige una voz y pulsa **▶ Probar voz**. Cada escena se narra por separado, así la voz y los subtítulos quedan sincronizados. |
+| **🤖 Voz IA** | Elige una voz y pulsa **▶ Probar voz**. Cada escena se narra por separado, así la voz y los subtítulos quedan sincronizados. Con **Voz local Piper** la voz se genera en tu PC, gratis y sin límite: la primera vez descarga unos 60 MB por voz y luego funciona sin Internet. |
 
 **Música:** tres músicas incluidas sin derechos de autor (cálida, energética, elegante) o la tuya. Usa solo música propia o libre de derechos para evitar bloqueos.
 
@@ -201,7 +273,7 @@ Botones de cada escena:
 
 ---
 
-## 9. Paso 5 · Subtítulos
+## 10. Paso 6 · Subtítulos
 
 | Estilo | Aspecto |
 |---|---|
@@ -215,7 +287,7 @@ Elige la posición (abajo, centro o arriba), el tamaño y si quieres todo en MAY
 
 ---
 
-## 10. Paso 6 · Marca y cierre
+## 11. Paso 7 · Marca y cierre
 
 - **Marca** y **Llamada a la acción**, por ejemplo `Cafetería Doña Ana` y `Te esperamos el domingo`.
 - **Contacto:** WhatsApp, dirección o web.
@@ -225,12 +297,14 @@ Elige la posición (abajo, centro o arriba), el tamaño y si quieres todo en MAY
 
 ---
 
-## 11. Paso 7 · Generar video
+## 12. Paso 8 · Generar video y exportar paquete
 
 Pulsa **🎬 GENERAR VIDEO**. La app hace sola todo lo que falte y muestra el avance:
 
 ```
-✓ Guion e imágenes
+✓ Guion
+✓ Reparto
+✓ Imágenes de las escenas
 ✓ Director IA: qué animar
 ✓ Completar o mejorar fotos
 ✓ Video IA
@@ -246,9 +320,26 @@ Pulsa **🎬 GENERAR VIDEO**. La app hace sola todo lo que falte y muestra el av
 
 > **▶ Vista previa** reproduce el video sin grabarlo, útil para revisar antes. **■ Detener** cancela.
 
+### 📦 Exportar paquete del proyecto
+
+El botón **📦 Exportar paquete** (debajo de Generar video y en el visor) junta todo el proyecto:
+
+| Archivo | Contenido |
+|---|---|
+| `guion.txt` | Los textos de cada escena |
+| `prompts.txt` | Prompts de imagen y de animación de cada escena, y **prompts listos para otras IA de video gratis** (Meta Vibes, etc.) |
+| `reparto/` | Imágenes y descripciones del reparto |
+| `escenas/` | Imagen inicial de cada escena (`escena_01.jpg`…) |
+| `clips/`, `voz/` | Clips de video y narraciones |
+| `subtitulos.srt`, `video_final` | Subtítulos y el video terminado |
+
+Se guarda en `salida/<proyecto>/paquete/` (funciona sin Internet) y, con conexión, también se descarga como **ZIP**.
+
+**Para animar gratis en otra IA:** sube `escenas/escena_01.jpg` como imagen inicial en la otra herramienta, pega su prompt de `prompts.txt`, descarga el clip y, en AUREA, pulsa **📥 Clip** en esa escena. Luego **🎬 Generar video** une todo.
+
 ---
 
-## 12. Dónde quedan tus archivos
+## 13. Dónde quedan tus archivos
 
 ```
 AUREA Studio/
@@ -260,6 +351,8 @@ AUREA Studio/
         ├── clips/                        ← clips de video IA
         ├── profundidad/                  ← mapas 3D ya calculados
         ├── voz/                          ← narraciones
+        ├── reparto/                      ← personajes, lugares y productos
+        ├── paquete/                      ← paquete exportado (guion, prompts…)
         ├── musica/                       ← tu música (si subiste una)
         ├── logo.png
         ├── Cafeteria_Dona_Ana_domingo_9x16_15s.mp4   ← VIDEO FINAL
@@ -270,7 +363,7 @@ Para seguir otro día: **📂 Abrir** → elige el proyecto. Todo vuelve tal com
 
 ---
 
-## 13. Recetas rápidas
+## 14. Recetas rápidas
 
 **Anuncio de negocio en 2 minutos (gratis)**
 1. Nivel 2. Crear proyecto.
@@ -290,13 +383,24 @@ Para seguir otro día: **📂 Abrir** → elige el proyecto. Todo vuelve tal com
 2. Tono *emotivo*, subtítulos Cinematográfico, música elegante.
 3. Desactiva **Cierre final** si no es un anuncio.
 
+**Anuncio con tu producto real en todas las escenas**
+1. Escribe la idea → ✨ Escribir guion → ✓ Usar la elegida.
+2. En **Reparto**, en la ficha del producto, pulsa **Subir foto** y pon la foto real.
+3. En cada escena donde no salga bien, pulsa **↻ IA**: ahora usa tu foto como referencia.
+4. 🎬 Generar video.
+
+**Video IA gratis e ilimitado con otra herramienta**
+1. Prepara las escenas y pulsa **📦 Exportar paquete**.
+2. En la otra IA de video, usa cada `escena_XX.jpg` con su prompt de `prompts.txt`.
+3. Vuelve a AUREA y sube cada clip con **📥 Clip** → 🎬 Generar video.
+
 **Retrato de persona cortado → cuerpo completo**
 1. Sube la foto → en la escena pulsa **✨ Transformar**.
 2. Escribe `completa el cuerpo entero` y marca **Ampliar el encuadre** → **✨ Aplicar**.
 
 ---
 
-## 14. Consejos si tienes poca electricidad o poca conexión
+## 15. Consejos si tienes poca electricidad o poca conexión
 
 - **Crea siempre un proyecto primero.** Se guarda solo; si se va la corriente, al volver lo abres con 📂 Abrir y sigues donde ibas.
 - **Separa el trabajo en dos ratos:**
@@ -308,7 +412,7 @@ Para seguir otro día: **📂 Abrir** → elige el proyecto. Todo vuelve tal com
 
 ---
 
-## 15. Solución de problemas
+## 16. Solución de problemas
 
 | Problema | Solución |
 |---|---|
@@ -319,7 +423,10 @@ Para seguir otro día: **📂 Abrir** → elige el proyecto. Todo vuelve tal com
 | **"Error 402 — sin saldo"** | Recarga créditos en el servicio de pago o baja de nivel. |
 | **"Error 429 — límite de uso"** | Espera unos minutos; usaste mucho seguido. |
 | **"Modelo no encontrado"** | El proveedor cambió el nombre del modelo. Escribe el nombre nuevo en Modelos y espacios. |
-| **La voz IA no suena** | Prueba otra voz o proveedor, o usa 🎙 Grabar. |
+| **La voz IA no suena** | Prueba otra voz o proveedor, o usa 🎙 Grabar. La voz local tarda la primera vez porque descarga el modelo. |
+| **"Límite gratis de Pollinations"** | Sin clave, Pollinations responde 1 vez cada 30 s y la app espera sola. Pon la clave gratuita y desaparece la espera. |
+| **Un servicio aparece como "bloqueado para tu país"** | Prueba con otro servidor de tu VPN, o deja que el respaldo automático use otro servicio. |
+| **La web no se puede leer** | Algunas webs bloquean a los lectores automáticos. Prueba con otra página del mismo sitio o usa el modo Desde mis imágenes con capturas tuyas. |
 | **El video sale en WebM y no en MP4** | Actualiza Chrome o Edge. WebM sirve para YouTube y Facebook; para WhatsApp e Instagram conviene MP4. |
 | **El video tiene saltos** | No cambies de pestaña ni minimices mientras graba. |
 | **"3D aproximado (modelo no disponible)"** | No se pudo descargar el modelo 3D. Funciona igual con un 3D aproximado; reintenta con mejor conexión. |
@@ -327,7 +434,7 @@ Para seguir otro día: **📂 Abrir** → elige el proyecto. Todo vuelve tal com
 
 ---
 
-## 16. Preguntas frecuentes
+## 17. Preguntas frecuentes
 
 **¿Es realmente gratis?**
 Sí, en los niveles 1, 2 y 3. Los servicios gratis tienen límites diarios y a veces están ocupados. Los niveles 4 a 7 usan servicios de pago con tu propia cuenta.
@@ -340,6 +447,9 @@ Las fotos se envían solo al servicio de IA que elijas cuando pides analizarlas,
 
 **¿Cuánto dura un video?**
 Entre 6 y 60 segundos en modo manual. Con voz, se ajusta solo a la narración (normalmente de 12 a 25 segundos con 4 escenas).
+
+**¿Puedo hacer el video en inglés o portugués?**
+Sí. Elige el idioma en el paso 1: el guion, la voz y los subtítulos salen en ese idioma.
 
 **¿Funciona sin Internet?**
 La Foto viva, la música, los subtítulos, la grabación y los proyectos sí. El guion, las imágenes, la voz y el video IA necesitan conexión.
