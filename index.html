@@ -142,6 +142,22 @@
   .fallback-row span.ok { color: var(--ok); border-color: rgba(99,214,160,.4); }
   .fallback-row span.ko { color: #ff8f8f; border-color: rgba(255,143,143,.4); text-decoration: line-through; }
 
+  /* pricing */
+  .price-wrap { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 18px; align-items: stretch; }
+  .plan { border-radius: 24px; padding: clamp(24px, 4vw, 40px); background: radial-gradient(600px 260px at 100% 0%, rgba(215,180,106,.16), transparent 70%), var(--panel); border: 1px solid rgba(215,180,106,.45); display: grid; gap: 16px; align-content: start; position: relative; }
+  .ribbon { justify-self: start; font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #191408; background: linear-gradient(135deg, var(--gold), var(--gold-2)); border-radius: 999px; padding: 5px 12px; font-weight: 500; }
+  .plan h3 { font-family: var(--display); font-size: 28px; }
+  .amount { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+  .amount .now { font-family: var(--display); font-size: clamp(54px, 8vw, 76px); font-weight: 700; line-height: 1; color: var(--gold-2); font-variant-numeric: tabular-nums; }
+  .amount .now small { font-size: .35em; color: var(--muted); font-family: var(--body); font-weight: 600; margin-left: 4px; }
+  .amount .was { font-size: 24px; color: var(--muted); text-decoration: line-through; text-decoration-color: #ff8f8f; font-variant-numeric: tabular-nums; }
+  .plan .after { color: var(--muted); font-size: 14.5px; }
+  .plan ul { margin: 0; padding-left: 20px; display: grid; gap: 7px; font-size: 15px; }
+  .plan ul b { color: var(--gold-2); font-weight: 600; }
+  .side { display: grid; gap: 14px; align-content: start; }
+  .side .card { gap: 8px; }
+  .side .big { font-family: var(--display); font-size: 34px; color: var(--text); line-height: 1; }
+
   /* levels */
   .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 20px; background: var(--panel); }
   table { width: 100%; border-collapse: collapse; min-width: 720px; font-size: 14.5px; }
@@ -188,7 +204,7 @@
   footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 
   @media (max-width: 920px) {
-    .hero .wrap, .contact, .split, .webmode { grid-template-columns: 1fr; }
+    .hero .wrap, .contact, .split, .webmode, .price-wrap { grid-template-columns: 1fr; }
     .feat { grid-template-columns: 1fr 1fr; }
     .card.wide { grid-column: span 2; }
     .subs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -214,8 +230,9 @@
       <a href="#web">Desde una web</a>
       <a href="#que-hace">Qué hace</a>
       <a href="#niveles">Niveles de IA</a>
+      <a href="#precio">Precio</a>
       <a href="#preguntas">Preguntas</a>
-      <a class="btn sm gold" href="https://wa.me/5355081288?text=Hola%2C%20quiero%20probar%20AUREA%20Studio%203%20d%C3%ADas" target="_blank" rel="noopener">Probar gratis</a>
+      <a class="btn sm gold" href="https://wa.me/5355081288?text=Hola%2C%20quiero%20probar%20AUREA%20Studio%203%20d%C3%ADas%20gratis" target="_blank" rel="noopener">Probar gratis</a>
     </div>
   </div>
 </nav>
@@ -227,12 +244,13 @@
       <h1>Tu idea, convertida en <em>video</em> que se mueve.</h1>
       <p class="lead">Escribe lo que quieres decir, sube tus fotos o pega el link de una web. AUREA Studio escribe el guion, mantiene igual a tu producto y a tus personajes en todas las escenas, anima el agua, el cielo y el fuego, pone voz en off, música y subtítulos, y te entrega el video listo para WhatsApp, Reels o TikTok.</p>
       <div class="hero-cta">
-        <a class="btn gold" href="https://wa.me/5355081288?text=Hola%2C%20quiero%20probar%20AUREA%20Studio%203%20d%C3%ADas" target="_blank" rel="noopener">Pedir prueba gratis de 3 días</a>
-        <a class="btn" href="#como">Ver cómo funciona</a>
+        <a class="btn gold" href="https://wa.me/5355081288?text=Hola%2C%20quiero%20probar%20AUREA%20Studio%203%20d%C3%ADas%20gratis" target="_blank" rel="noopener">Pedir prueba gratis de 3 días</a>
+        <a class="btn" href="#precio">Ver precio de lanzamiento</a>
       </div>
       <div class="hero-facts">
         <span><b>Un botón</b> hace todo el video</span>
         <span><b>Desde $0</b> en IA</span>
+        <span><b>Modo automático</b>: nunca se detiene</span>
         <span><b>3 idiomas</b>: español, inglés, portugués</span>
         <span><b>MP4</b> 1080 × 1920</span>
       </div>
@@ -250,7 +268,7 @@
     <div class="sec-head">
       <div class="eyebrow">Cómo funciona</div>
       <h2>Pulsas <em>Generar video</em> y la app hace estos 7 pasos sola.</h2>
-      <p class="lead">Ves el avance de cada paso. Si un servicio gratis falla, sigue con la alternativa en vez de detenerse.</p>
+      <p class="lead">Antes de empezar comprueba qué servicios de IA funcionan en tu computadora y elige el mejor para cada paso. Ves el avance en todo momento, y si algo falla sigue con la siguiente opción en lugar de detenerse.</p>
     </div>
     <div class="pipe-wrap">
       <ol class="pipe">
@@ -322,9 +340,9 @@
       </article>
       <article class="card">
         <div class="ico">🔁</div>
-        <h3>Si un servicio falla, sigue con otro</h3>
-        <p>Pon varias claves y la app prueba cuáles funcionan desde tu conexión. Si una IA no responde o está bloqueada en tu país, usa la siguiente disponible.</p>
-        <div class="fallback-row"><span class="ko">Servicio A</span><span class="ok">Servicio B ✓</span><span>Servicio C</span></div>
+        <h3>Modo automático: nunca se detiene</h3>
+        <p>Comprueba solo qué IA funcionan en cada computadora, sigue tu orden de prioridad y salta las que fallan o están bloqueadas en tu país. Si ninguna responde, termina el video igual con voz y animación locales.</p>
+        <div class="fallback-row"><span class="ko">1. Bloqueada</span><span class="ok">2. Funciona ✓</span><span>3. Reserva</span></div>
       </article>
       <article class="card">
         <div class="ico">🧠</div>
@@ -425,6 +443,47 @@
   </div>
 </section>
 
+<section id="precio">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Precio de lanzamiento</div>
+      <h2>Una sola licencia, <em>para siempre</em>. Mitad de precio para los primeros 10.</h2>
+      <p class="lead">Pruébala completa durante 3 días sin pagar nada. Si te convence, la compras al precio de lanzamiento mientras queden plazas.</p>
+    </div>
+    <div class="price-wrap">
+      <div class="plan">
+        <span class="ribbon">Solo los primeros 10 clientes</span>
+        <h3>AUREA Studio · Licencia de por vida</h3>
+        <div class="amount"><span class="now">$49<small>USD</small></span><span class="was">$97</span></div>
+        <p class="after">Pago único. Después de los primeros 10, el precio vuelve a $97. También en CUP, al cambio del día.</p>
+        <ul>
+          <li><b>Todas las funciones</b>: idea, fotos o web → video con voz, música y subtítulos</li>
+          <li>Reparto consistente, Foto viva 3D, modo automático, 3 idiomas</li>
+          <li><b>Actualizaciones incluidas</b> durante el primer año</li>
+          <li>Tutorial paso a paso y ayuda por WhatsApp para crear tu primer video</li>
+          <li>Licencia para 1 computadora</li>
+        </ul>
+        <a class="btn gold" href="https://wa.me/5355081288?text=Hola%2C%20quiero%20AUREA%20Studio%20con%20el%20precio%20de%20lanzamiento" target="_blank" rel="noopener">Quiero mi plaza de lanzamiento</a>
+      </div>
+      <div class="side">
+        <div class="card">
+          <div class="eyebrow">Prueba gratis</div>
+          <span class="big">3 días</span>
+          <p>Con todas las funciones activas, sin límites y sin pagar antes. Te la envío por WhatsApp con el tutorial.</p>
+        </div>
+        <div class="card">
+          <div class="eyebrow">Costo de la IA</div>
+          <p>Con los niveles gratis (1, 2 y 3) no pagas nada más. Si eliges servicios de IA de pago, se pagan aparte en la cuenta de cada servicio, nunca a través de la app.</p>
+        </div>
+        <div class="card">
+          <div class="eyebrow">Formas de pago</div>
+          <div class="pay"><span>QvaPay</span><span>Transfermóvil (CUP)</span><span>USD</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="preguntas">
   <div class="wrap">
     <div class="sec-head">
@@ -435,12 +494,15 @@
       <details><summary>¿De verdad puedo hacer videos sin pagar la IA?</summary><p>Sí. Los niveles 1, 2 y 3 usan servicios gratuitos. Tienen límites diarios: con una cuenta gratis de Hugging Face salen unas 4 a 8 escenas con video IA real por día, y la Foto viva no tiene límite.</p></details>
       <details><summary>¿Sirve para la web de mis clientes?</summary><p>Sí. Pegas el link y la app lee la web, la divide por partes y crea un video que la explica, mostrando cada sección en un navegador animado y señalando lo importante. Algunas webs bloquean a los lectores automáticos; en ese caso puedes usar capturas tuyas en el modo de imágenes.</p></details>
       <details><summary>¿Puedo usar los modelos de video de Google sin Google Flow?</summary><p>Sí. AUREA puede usar Google Veo 3.1 y Omni Flash a través de fal.ai, que no depende de Google Flow. Se paga por escena en tu cuenta de fal.ai.</p></details>
-      <details><summary>¿Qué pasa si una IA está bloqueada en mi país?</summary><p>La app prueba desde tu conexión qué servicios funcionan y elige el mejor disponible. Si uno falla durante el trabajo, pasa sola al siguiente, y solo usa servicios de pago si tú lo permites.</p></details>
+      <details><summary>¿Qué pasa si una IA está bloqueada en mi país?</summary><p>No tienes que hacer nada. El modo automático comprueba los servicios al abrir la app y antes de cada video, sigue tu orden de prioridad y salta los que no funcionan desde tu conexión. Recuerda los que fallaron para no perder tiempo con ellos, y nunca pasa a un servicio de pago que tú no hayas elegido.</p></details>
+      <details><summary>¿Y si no responde ninguna IA?</summary><p>El video se termina igual: con guion de respaldo, fondos artísticos en lugar de las imágenes, una voz que se genera en tu propia PC y la animación Foto viva. Cuando vuelva la conexión puedes regenerar solo las escenas que quieras.</p></details>
+      <details><summary>¿Funciona igual en cualquier país?</summary><p>Cada persona pone sus propias claves de IA y el modo automático se adapta solo a su país y a su conexión, usando lo que esté disponible allí, sin configurar nada a mano.</p></details>
       <details><summary>¿Cuánto tarda un video?</summary><p>El guion y las imágenes tardan de 1 a 3 minutos con los servicios gratis. El video se graba en tiempo real: uno de 20 segundos tarda unos 20 segundos. Cada clip de video IA tarda de 1 a 5 minutos.</p></details>
       <details><summary>¿Funciona en el celular?</summary><p>Se abre, pero está hecha para PC: en el celular no guarda proyectos en carpetas y la grabación es más lenta.</p></details>
       <details><summary>¿Puedo usar los videos en mi negocio?</summary><p>Sí. La música incluida la genera la propia app y no tiene derechos de autor. Si subes música propia, debe ser tuya o libre de derechos.</p></details>
       <details><summary>¿Qué pasa si se va la corriente a mitad del trabajo?</summary><p>El proyecto se guarda solo cada vez que cambias algo. Al volver, pulsas Abrir y sigues donde ibas, con las imágenes, clips y voces ya hechos.</p></details>
-      <details><summary>¿Cómo funciona la prueba gratis?</summary><p>Escríbeme por WhatsApp y te envío la app con 3 días de prueba completa. Si te gusta, compras la licencia y te la activo.</p></details>
+      <details><summary>¿Cómo funciona la prueba gratis?</summary><p>Escríbeme por WhatsApp y te envío la app con 3 días de prueba completa, con todas las funciones. Si te gusta, compras la licencia y te la activo en tu computadora.</p></details>
+      <details><summary>¿Es un pago mensual?</summary><p>No. Es un pago único por una licencia de por vida para 1 computadora, con actualizaciones incluidas durante el primer año. En el lanzamiento cuesta $49 para los primeros 10 clientes; después, $97.</p></details>
     </div>
   </div>
 </section>
@@ -451,14 +513,14 @@
       <div>
         <div class="eyebrow">Prueba gratis de 3 días</div>
         <h2 style="margin-top:12px">Haz tu primer video <em>hoy</em>.</h2>
-        <p class="lead">Escríbeme por WhatsApp, te envío AUREA Studio con el tutorial y te ayudo a crear tu primer video. Consulta el precio de la licencia en el mismo chat.</p>
+        <p class="lead">Escríbeme por WhatsApp, te envío AUREA Studio con el tutorial y te ayudo a crear tu primer video. Los primeros 10 clientes la llevan a <b style="color:var(--gold-2)">$49</b> en lugar de $97.</p>
         <div class="pay" style="margin-top:20px"><span>QvaPay</span><span>Transfermóvil (CUP)</span><span>Licencia con activación</span></div>
       </div>
       <div class="phonebox">
         <span class="lbl">WhatsApp</span>
         <span class="num" id="num">+53 5508 1288</span>
         <div class="row">
-          <a class="btn gold" href="https://wa.me/5355081288?text=Hola%2C%20quiero%20probar%20AUREA%20Studio%203%20d%C3%ADas" target="_blank" rel="noopener">Abrir WhatsApp</a>
+          <a class="btn gold" href="https://wa.me/5355081288?text=Hola%2C%20quiero%20probar%20AUREA%20Studio%203%20d%C3%ADas%20gratis" target="_blank" rel="noopener">Abrir WhatsApp</a>
           <button class="btn" id="copyBtn" type="button">Copiar número</button>
         </div>
         <span id="copyMsg" aria-live="polite"></span>
