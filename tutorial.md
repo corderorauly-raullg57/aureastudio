@@ -1,6 +1,6 @@
 # AUREA Studio — Tutorial completo
 
-**AUREA Studio** convierte una idea o tus fotos en un video para redes sociales: con guion, imágenes, animación, voz en off, música y subtítulos animados. Todo funciona desde un solo archivo HTML en tu navegador.
+**AUREA Studio** convierte una idea o tus fotos en un video para redes sociales: con guion, imágenes, animación, voz en off, música y subtítulos animados. Todo funciona desde un programa para Windows, sin instalar nada.
 
 ---
 
@@ -30,23 +30,37 @@
 
 | Requisito | Detalle |
 |---|---|
-| Computadora | PC o laptop con Windows, Linux o Mac. |
-| Navegador | **Google Chrome** o **Microsoft Edge** actualizados. Son los únicos que guardan en carpetas y exportan MP4 directamente. |
+| Computadora | PC o laptop con **Windows** (64 bits). |
+| Instalación | Ninguna. Es un programa **portable**: se abre con doble clic. Trae su propio motor, así que **no necesitas instalar Chrome** ni nada más. |
 | Internet | Para las funciones de IA (guion, imágenes, voz, video IA). La Foto viva, la música incluida, los subtítulos y la grabación funcionan sin Internet. |
 | Espacio | Unos 100 MB libres por proyecto (imágenes, clips y video final). |
 
-> En celular la app se abre, pero no guarda en carpetas y la exportación es más lenta. Úsala en una PC.
+> Los primeros **3 días** el programa funciona completo como prueba. Al terminar, se activa con un código para tu computadora (ver más abajo).
 
 ---
 
 ## 2. Primer arranque
 
-1. Crea una carpeta, por ejemplo `AUREA Studio`, y pon dentro el archivo `AUREA_Studio_Pro.html`.
-2. Haz doble clic en el archivo. Si se abre con otro navegador, haz clic derecho → **Abrir con** → Chrome o Edge.
-3. Verás tres zonas:
+1. Copia la carpeta del programa (por ejemplo `AUREA Studio`) a un lugar fijo de tu PC, como `Documentos`. No lo dejes dentro de un `.zip`.
+2. Entra en la carpeta y haz doble clic en **`AUREA Studio.exe`**. La primera vez puede tardar unos segundos en abrir.
+3. **Aviso de Windows la primera vez:** como es un programa nuevo, Windows puede mostrar *"Windows protegió tu PC"*. Pulsa **Más información → Ejecutar de todas formas**. Es normal; el programa no se instala ni toca el sistema.
+4. **Prueba de 3 días:** arriba verás una barra que dice cuántos días de prueba te quedan, con un botón **Activar ahora** para cuando compres la licencia.
+5. Verás tres zonas:
    - **Arriba:** el proyecto actual, los botones **＋ Crear proyecto**, **📂 Abrir** y **⚙ Configuración**, y la barra **Motor de IA**, que te dice qué servicios estás usando.
    - **Izquierda:** los 7 pasos para armar el video.
    - **Derecha:** el **visor**, donde ves el lienzo, la vista previa y el video final.
+
+### Prueba gratis y activación de por vida
+
+Durante los primeros 3 días el programa funciona completo, sin límites. Para activarlo de por vida en esta computadora:
+
+1. En la barra de arriba pulsa **Activar ahora** (o espera a que termine la prueba: la pantalla de activación aparece sola).
+2. Verás el **ID de este equipo** (algo como `1A2DD-09CA4-D8604-AE1A8`). Pulsa **Copiar ID**.
+3. Pulsa **Pedir mi clave por WhatsApp** (o escribe al **+53 5508 1288**) y envía ese ID junto con tu pago.
+4. Recibirás un **código de activación**. Pégalo en la casilla y pulsa **Activar definitivamente**.
+5. Listo: el programa queda activado para siempre en esa PC.
+
+> El código solo funciona en tu computadora, por eso es seguro. Si formateas o cambias de PC, escríbeme y te genero uno nuevo.
 
 ---
 
@@ -56,7 +70,7 @@ Trabaja siempre dentro de un proyecto: así nada se pierde si se va la corriente
 
 1. Pulsa **＋ Crear proyecto**.
 2. Escribe un nombre, por ejemplo `Cafetería Doña Ana - domingo`. La app no deja crear un proyecto sin nombre.
-3. **La primera vez** te pedirá elegir una carpeta: elige la carpeta donde está `AUREA_Studio_Pro.html` y acepta el permiso. Allí se crea la carpeta `salida`.
+3. **La primera vez** te pedirá elegir una carpeta: elige la carpeta donde está el programa (`AUREA Studio.exe`) y acepta el permiso. Allí se crea la carpeta `salida`.
 4. El proyecto se guarda solo cada vez que cambias algo. El indicador de arriba muestra **Guardado hh:mm** en verde.
 
 > Al crear un proyecto nuevo, la pantalla queda limpia para empezar de cero. Los proyectos anteriores siguen guardados en `salida` y los abres con **📂 Abrir**.
@@ -96,7 +110,7 @@ Pulsa **⚙ Configuración**. Los niveles van de gratis a premium:
 2. Entra con una cuenta de Google y pulsa **Create API key**.
 3. Copia la clave y pégala en la casilla.
 
-> 🔒 Las claves se guardan solo en tu navegador. No van dentro de los proyectos, así que puedes compartir una carpeta de proyecto sin riesgo.
+> 🔒 Las claves se guardan solo en tu computadora, dentro del programa. No van dentro de los proyectos, así que puedes compartir una carpeta de proyecto sin riesgo.
 
 ### 🤖 Modo automático: el video nunca se detiene
 
@@ -350,7 +364,7 @@ Se guarda en `salida/<proyecto>/paquete/` (funciona sin Internet) y, con conexi�
 
 ```
 AUREA Studio/
-├── AUREA_Studio_Pro.html
+├── AUREA Studio.exe
 └── salida/
     └── Cafetería Doña Ana - domingo/
         ├── proyecto.json                ← el proyecto (textos y ajustes)
@@ -413,7 +427,9 @@ Para seguir otro día: **📂 Abrir** → elige el proyecto. Todo vuelve tal com
 - **Separa el trabajo en dos ratos:**
   - *Con conexión:* pulsa **✨ Crear guion e imágenes**, **Generar voces ahora** y convierte las escenas en video IA. Todo queda guardado en la carpeta del proyecto.
   - *Sin conexión:* ajusta subtítulos, música, marca y pulsa 🎬 Generar video. La grabación no necesita Internet si las voces e imágenes ya están hechas.
-- **Descarga el modelo 3D una vez** con buena conexión (25 MB); después queda guardado en el navegador.
+- **Descarga todo de una vez** con buena conexión: **⚙ Configuración › 📦 Trabajar sin conexión › ⬇ Descargar todo ahora**. Guarda las voces locales que marques, el modelo 3D de la Foto viva y las librerías. Después cargan al instante y sin Internet.
+- **Paquete sin conexión**: en esa misma sección, **💾 Exportar paquete** crea un archivo `.aurpack` con todo lo descargado. En otra PC, **📂 Importar paquete** lo deja listo sin descargar nada.
+- **Si el video sale negro**: la app lo detecta sola y lo repite en **modo seguro 720p**, y lo recuerda para esa PC. Puedes activarlo o quitarlo en **⚙ Configuración › 🎞 Grabación del video**.
 - **Ahorra cuota de video IA:** en el paso 3 elige *Video IA: solo la primera escena*. Las demás escenas usan Foto viva, que es ilimitada.
 - **Con la laptop en batería**, cierra otras pestañas mientras grabas el video final.
 
@@ -434,10 +450,10 @@ Para seguir otro día: **📂 Abrir** → elige el proyecto. Todo vuelve tal com
 | **"Límite gratis de Pollinations"** | Sin clave, Pollinations responde 1 vez cada 30 s y la app espera sola. Pon la clave gratuita y desaparece la espera. |
 | **Un servicio aparece como "bloqueado para tu país"** | Prueba con otro servidor de tu VPN, o deja que el respaldo automático use otro servicio. |
 | **La web no se puede leer** | Algunas webs bloquean a los lectores automáticos. Prueba con otra página del mismo sitio o usa el modo Desde mis imágenes con capturas tuyas. |
-| **El video sale en WebM y no en MP4** | Actualiza Chrome o Edge. WebM sirve para YouTube y Facebook; para WhatsApp e Instagram conviene MP4. |
+| **El video sale en WebM y no en MP4** | Es normal en algunos equipos. WebM sirve igual para YouTube y Facebook; para WhatsApp e Instagram conviértelo a MP4 con cualquier conversor. |
 | **El video tiene saltos** | No cambies de pestaña ni minimices mientras graba. |
 | **"3D aproximado (modelo no disponible)"** | No se pudo descargar el modelo 3D. Funciona igual con un 3D aproximado; reintenta con mejor conexión. |
-| **No guarda en carpetas** | Usa Chrome o Edge en una PC, y acepta el permiso de la carpeta. |
+| **No guarda en carpetas** | Acepta el permiso de la carpeta cuando el programa lo pida al crear el primer proyecto. |
 
 ---
 
@@ -450,7 +466,7 @@ Sí, en los niveles 1, 2 y 3. Los servicios gratis tienen límites diarios y a v
 Sí. La música incluida la genera la app y no tiene derechos de autor. Si subes tu propia música, asegúrate de que sea tuya o libre de derechos.
 
 **¿Mis fotos y claves se envían a algún sitio?**
-Las fotos se envían solo al servicio de IA que elijas cuando pides analizarlas, transformarlas o animarlas. Las claves se quedan en tu navegador y nunca se guardan en los proyectos.
+Las fotos se envían solo al servicio de IA que elijas cuando pides analizarlas, transformarlas o animarlas. Las claves se quedan en tu computadora y nunca se guardan en los proyectos.
 
 **¿Cuánto dura un video?**
 Entre 6 y 60 segundos en modo manual. Con voz, se ajusta solo a la narración (normalmente de 12 a 25 segundos con 4 escenas).
